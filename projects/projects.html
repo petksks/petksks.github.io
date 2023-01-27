@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Owl Carousel CSS and JS -->
+    <link rel="stylesheet" href="OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css">
+    <script src="OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+
+    <!--CSS Styles -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32x32.png" />
+
+    <link <!-- Animate CSS CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <title>Projects</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav>
+        <h1>Projects</h1>
+        <ul class="navigation">
+            <li><a href="../index.html" class="nav-link">About</a></li>
+            <li><a href="../skills/skills.html" class="nav-link">Skills</a></li>
+            <li><a href="../projects/projects.html" class="nav-link">Projects</a></li>
+            <li><a href="../contactpage/contactpage.html" class="nav-link"> Contact</a></li>
+        </ul>
+        <button class="burger-menu" id="burger-menu">
+            <ion-icon clas="bars" name="menu-outline"></ion-icon>
+        </button>
+    </nav>
+
+    <!-- dog fact button  -->
+    <div id="dog-fact"></div>
+    <button id="dog-fact-button">Get Dog Fact</button>
+
+    <div id="error-message">
+        <p>An error occurred while fetching dog facts. Please try again later or just google it mate.</p>
+        <button id="dismiss-button">Dismiss</button>
+        <button id="dog-fact-button">Try Again</button>
+    </div>
+
+
+    <!-- Carousel -->
+    <section class="projects" id="projects">
+        <h2 class="projects-title">Some of my Recent Projects</h2>
+        <div class="projects-container owl-carousel">
+            <div class="project-container project-card">
+                <img src="../assets/images/memorygame.png" alt="memory" loading="lazy" class="project-pic" />
+                <h3 class="project-title">Javascript memory game</h3>
+                <p class="project-details">
+                    A game of memory build with javascript only.
+                </p>
+                <a href="Memory-game/index.html" target="_blank" class="project-link">Check it Out</a>
+            </div>
+            <div class="project-container project-card">
+                <img src="../assets/images/mywebsite.png" alt="matcha-tea-website" loading="lazy" class="project-pic" />
+                <h3 class="project-title">Website for own business</h3>
+                <p class="project-details">
+                    I built this website for my own side business in which I sell matcha tea from Japan.
+                </p>
+                <a href="https://www.fillinmatcha.com" target="_blank" class="project-link">Check it Out</a>
+            </div>
+
+            <div class="project-container project-card">
+                <img src="../assets/images/expenseTracker.png" alt="expense-tracker" loading="lazy"
+                    class="project-pic" />
+                <h3 class="project-title">third project tbd</h3>
+                <p class="project-details">
+                    I dont know what this project will be so stay tuned!
+                </p>
+                <a href="#" target="_blank" class="project-link">Check it Out</a>
+            </div>
+        </div>
+    </section>
+    <script src="../assets/js/app.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.owl-carousel').owlCarousel({
+                loop: true,
+                margin: 10,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 2
+                    },
+                    1000: {
+                        items: 3
+                    }
+                }
+            })
+        });
+    </script>
+    <script>
+        init();
+    </script>
+</body>
+
+</html>
