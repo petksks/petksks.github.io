@@ -1,7 +1,6 @@
 // Nav hamburgerburger selections
-const burger = document.querySelector("#burger-menu");
-const ul = document.querySelector("nav ul");
-const nav = document.querySelector("nav");
+const burgerMenu = document.getElementById("burger-menu");
+const navigation = document.querySelector(".navigation");
 
 // Scroll to top selection
 const scrollUp = document.querySelector("#scroll-up");
@@ -10,62 +9,34 @@ const scrollUp = document.querySelector("#scroll-up");
 const navLink = document.querySelectorAll(".nav-link");
 
 // Hamburger menu function
-if (burger) {
-    burger.addEventListener("click", () => {
-        ul.classList.toggle("show");
-    });
+if (burgerMenu) {
+  burgerMenu.addEventListener("click", () => {
+    navigation.classList.toggle("show");
+  });
 }
 
 // Close hamburger menu when a link is clicked
 if (navLink) {
-    navLink.forEach((link) =>
-        link.addEventListener("click", () => {
-            ul.classList.remove("show");
-        })
-    );
+  navLink.forEach((link) =>
+    link.addEventListener("click", () => {
+      navigation.classList.remove("show");
+    })
+  );
 }
 
 // Scroll to top functionality
 if (scrollUp) {
-    scrollUp.addEventListener("click", () => {
-        window.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: "smooth",
-        });
+  scrollUp.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
     });
+  });
 }
 
 document.addEventListener("DOMContentLoaded", init);
 
 function init() {
-    //Event listener for dismiss button
-    const dismissButton = document.getElementById("dismiss-button");
-    if (dismissButton) {
-        dismissButton.addEventListener("click", function () {
-            document.getElementById("error-message").style.display = "none";
-        });
-    }
-
-    // Dog fact button
-    const dogFactButton = document.getElementById("dog-fact-button");
-    if (dogFactButton) {
-        dogFactButton.addEventListener("click", function () {
-            fetch("https://dog-api.kinduff.com/api/facts")
-                .then(response => response.json())
-                .then(data => {
-                    console.log(data);
-                    const dogFactParagrapgh = document.createElement("p");
-                    dogFactParagrapgh.textContent = data.facts[0];
-                    document.getElementById("dog-fact").appendChild(dogFactParagrapgh);
-                })
-                .catch(error => {
-                    console.log(error);
-                    const errorMessage = document.getElementById("error-message");
-                    errorMessage.textContent =
-                        "an error occurred while fetching dog facts. Please try again later";
-                    errorMessage.style.display = "block";
-                });
-        });
-    }
+  // Rest of your code
 }
